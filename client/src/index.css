@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* input {
+    @apply w-40 h-20 text-base pl-2 mb-2 rounded-xl;
+} */
+/* input {
+    @apply focus:border-blue-100;
+} */
