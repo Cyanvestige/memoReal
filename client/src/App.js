@@ -17,8 +17,6 @@ const App = () => {
     // const [currID, setcurrID] = useState(0);
     const dispatch = useDispatch();
     const currID = useSelector((state) => state.currid);
-    const contents = useSelector((state) => state.contents);
-    console.log(currID);
     useEffect(() => {
         dispatch(getContents());
     }, [currID, dispatch]);
@@ -28,7 +26,7 @@ const App = () => {
             <div
                 className="mt-32 d-flex flex-column align-items-center "
                 style={{
-                    height: "94vh",
+                    height: "91vh",
                     width: "60%",
                     padding: "8em",
                     margin: "0 auto",

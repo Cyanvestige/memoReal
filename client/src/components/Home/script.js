@@ -23,7 +23,6 @@ let startClock = () => {
 };
 let updateTime = () => {
     let now = new Date();
-    console.log(now);
     let hours = now.getHours() % 12;
     let minutes = now.getMinutes();
     let seconds = now.getSeconds();

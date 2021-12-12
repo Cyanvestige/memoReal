@@ -9,7 +9,6 @@ const TagCard = ({ tag, option }) => {
     const numberOfPosts = contents.filter(
         (content) => content.tag === tag
     ).length;
-    console.log(option);
     return (
         <div>
             <Link
@@ -31,10 +30,10 @@ const TagCard = ({ tag, option }) => {
                     className="h-40 w-36 flex flex-col justify-center items-center hover:shadow-xl"
                     variant="outlined"
                 >
-                    <Typography class="text-xl font-extrabold m-0">
+                    <Typography className="text-xl font-extrabold m-0">
                         {tag}
                     </Typography>
-                    <Typography class="text-xl m-0">
+                    <Typography className="text-xl m-0">
                         {numberOfPosts}
                         {`${numberOfPosts == 1 ? ` post` : ` posts`}`}
                     </Typography>

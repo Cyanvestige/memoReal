@@ -9,11 +9,9 @@ const Test = () => {
     const [index, setIndex] = useState(0);
     const contents = useSelector((state) => state.contents);
     const { tag } = location.state;
-    console.log(tag);
     const [filteredContents, setFilteredContents] = useState([
         ...contents.filter((content) => content.tag === tag),
     ]);
-    console.log(filteredContents);
     const [score, setScore] = useState(0);
     const [answer, setAnswer] = useState("");
     const handleInputChange = (e) => {
@@ -42,7 +40,6 @@ const Test = () => {
                 )})%`
             );
     };
-    console.log(score);
     return (
         <div className="w-8/12 flex-col items-center justify-content-center ">
             <div className=" flex-col items-center justify-content-center ">
@@ -95,10 +92,10 @@ const Test = () => {
                     {filteredContents[index].hasChoices && (
                         <div className="choices flex items-center justify-center">
                             <div className="grid grid-cols-2 break-all mt-10 gap-10">
-                                <div class="flex">
-                                    <div class="form-check ">
+                                <div className="flex">
+                                    <div className="form-check ">
                                         <input
-                                            class="form-check-input me-10 "
+                                            className="form-check-input me-10 "
                                             type="radio"
                                             name="multipleChoice"
                                             value={
@@ -115,10 +112,10 @@ const Test = () => {
                                         </label>
                                     </div>
                                 </div>
-                                <div class="flex">
-                                    <div class="form-check ">
+                                <div className="flex">
+                                    <div className="form-check ">
                                         <input
-                                            class="form-check-input"
+                                            className="form-check-input"
                                             type="radio"
                                             name="multipleChoice"
                                             value={
@@ -132,10 +129,10 @@ const Test = () => {
                                         </label>
                                     </div>
                                 </div>
-                                <div class="flex">
-                                    <div class="form-check ">
+                                <div className="flex">
+                                    <div className="form-check ">
                                         <input
-                                            class="form-check-input"
+                                            className="form-check-input"
                                             type="radio"
                                             name="multipleChoice"
                                             value={
@@ -149,10 +146,10 @@ const Test = () => {
                                         </label>
                                     </div>
                                 </div>
-                                <div class="flex">
-                                    <div class="form-check ">
+                                <div className="flex">
+                                    <div className="form-check ">
                                         <input
-                                            class="form-check-input"
+                                            className="form-check-input"
                                             type="radio"
                                             name="multipleChoice"
                                             value={
@@ -161,7 +158,7 @@ const Test = () => {
                                             id="choice_4"
                                             onChange={handleInputChange}
                                         />
-                                        <label class="" for="choice_4">
+                                        <label className="" for="choice_4">
                                             {filteredContents[index].choice_4}
                                         </label>
                                     </div>
@@ -171,9 +168,9 @@ const Test = () => {
                     )}
                 </div>
                 {!filteredContents[index].hasChoices && (
-                    <div class="answer-field flex">
+                    <div className="answer-field flex">
                         <input
-                            class="shadow-sm p-3 mb-3 bg-body rounded justify-content-center"
+                            className="shadow-sm p-3 mb-3 bg-body rounded justify-content-center"
                             type="text "
                             style={inputStyle}
                             onChange={handleInputChange}
@@ -184,7 +181,7 @@ const Test = () => {
                     {index === filteredContents.length - 1 ? (
                         <div
                             type="button"
-                            class="btn btn-outline-primary btn-sm mt-5"
+                            className="btn btn-outline-primary btn-sm mt-5"
                             onClick={handleSubmit}
                         >
                             Submit
@@ -192,7 +189,7 @@ const Test = () => {
                     ) : (
                         <div
                             type="button"
-                            class="btn btn-outline-primary btn-sm mt-5"
+                            className="btn btn-outline-primary btn-sm mt-5"
                             onClick={switchNext}
                         >
                             Next

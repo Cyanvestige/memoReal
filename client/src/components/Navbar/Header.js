@@ -40,7 +40,7 @@ function Header() {
             <div className="header__left">
                 <h2>MemoReal</h2>
             </div>
-            <div className="flex justify-center items-center">
+            <div className="flex justify-center items-center ms-5">
                 <div className="headeroptions mt-2 flex">
                     <Link to="/" className="no-underline">
                         <HeaderOption Icon={HomeIcon} title="Home" />
@@ -85,31 +85,22 @@ function Header() {
                             </Link>
                         </div>
                     )}
-
-                    {/* <HeaderOption Icon={NotificationsIcon} title="Notify" /> */}
                 </div>
                 {user ? (
-                    <div className="flex pb-1">
-                        <Avatar
-                            className="mr-4"
-                            alt={"fff"}
-                            src={
-                                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpEOxb00bF7zvLrHPEKfn4vsdmipnkl7T1zw&usqp=CAU"
-                            }
-                        ></Avatar>
-                        <h5 class="mr-4 mt-2">{`${user.result.name}`}</h5>
+                    <div className="flex pb-1 ms-4">
+                        <h5 className="mr-4 mt-2">{`${user.result.name}`}</h5>
                         <Button variant="contained" onClick={logout}>
                             Log out
                         </Button>
                     </div>
                 ) : (
-                    <Link to="/auth" className="no-underline">
+                    <Link to="/auth" className="no-underline ms-2">
                         <Button
                             variant="contained"
                             color="primary"
                             className="h-10 hover:text-white-100"
                         >
-                            {"Sign In"}
+                            {"Log In"}
                         </Button>
                     </Link>
                 )}

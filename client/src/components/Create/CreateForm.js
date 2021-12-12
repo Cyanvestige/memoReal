@@ -28,7 +28,6 @@ const CreateForm = () => {
         answer: null,
         hasChoices: null,
     });
-    console.log(data);
 
     const clear = () => {};
 
@@ -75,10 +74,7 @@ const CreateForm = () => {
             // }
         }
         create();
-
-        console.log(data);
     };
-    console.log(useSelector((state) => state.contents));
     return (
         <Form
             type={type}

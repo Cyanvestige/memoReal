@@ -13,8 +13,6 @@ app.use(express.urlencoded({ limit: "30mb", extended: true }));
 
 app.use(cors());
 
-// const CONNECTION_URL =
-//     "mongodb+srv://cyanvestige:Xiaowei123@cluster0.omarc.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 app.use("/contents", contentRoutes);
 app.use("/user", userRoutes);
 

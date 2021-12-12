@@ -27,7 +27,6 @@ const Home = () => {
     //     fetchQuote.then((quote) => setQuote(quote));
     // });
     useEffect(() => {
-        console.log(now.getHours() % 12);
         const interval = setInterval(() => {
             let now = new Date();
             setHour(now.getHours() % 12);
@@ -38,11 +37,11 @@ const Home = () => {
     }, []);
     return (
         <div>
-            <div class="clock">
-                <div class="clock_face">
-                    <div class="clock_hands">
+            <div className="clock">
+                <div className="clock_face">
+                    <div className="clock_hands">
                         <div
-                            class="clock_hand clock_hours"
+                            className="clock_hand clock_hours"
                             style={{
                                 transform: `rotate(${
                                     (360 / 12) * hour + (360 / 12 / 60) * minute
@@ -50,7 +49,7 @@ const Home = () => {
                             }}
                         ></div>
                         <div
-                            class="clock_hand clock_minutes"
+                            className="clock_hand clock_minutes"
                             style={{
                                 transform: `rotate(${
                                     (360 / 60) * minute +
@@ -59,7 +58,7 @@ const Home = () => {
                             }}
                         ></div>
                         <div
-                            class="clock_hand clock_seconds"
+                            className="clock_hand clock_seconds"
                             style={{
                                 transform: `rotate(${(360 / 60) * second}deg)`,
                             }}

@@ -29,27 +29,33 @@ const Form = ({ type, data, setData, handleChange, handleSubmit }) => {
                     className="checks d-flex justify-content-evenly"
                     style={{ marginTop: "2em" }}
                 >
-                    <div class="form-check">
+                    <div className="form-check">
                         <input
-                            class="form-check-input"
+                            className="form-check-input"
                             type="radio"
                             onChange={handleChange}
                             value="fillin"
                             checked={type == "fillin"}
                         />
-                        <label class="form-check-label" for="flexRadioDefault1">
+                        <label
+                            className="form-check-label"
+                            for="flexRadioDefault1"
+                        >
                             Fill-in-the-blank
                         </label>
                     </div>
-                    <div class="form-check">
+                    <div className="form-check">
                         <input
-                            class="form-check-input"
+                            className="form-check-input"
                             type="radio"
                             value="multiple"
                             onChange={handleChange}
                             checked={type == "multiple"}
                         />
-                        <label class="form-check-label" for="flexRadioDefault2">
+                        <label
+                            className="form-check-label"
+                            for="flexRadioDefault2"
+                        >
                             Multiple Choice
                         </label>
                     </div>
@@ -67,7 +73,7 @@ const Form = ({ type, data, setData, handleChange, handleSubmit }) => {
                     ></textarea>
                 </div>
                 {type == "multiple" && (
-                    <div class="multiple-choice">
+                    <div className="multiple-choice">
                         <div className="mt-3">
                             <label className="form-label">Choice 1</label>
                             <textarea
@@ -130,7 +136,7 @@ const Form = ({ type, data, setData, handleChange, handleSubmit }) => {
                         </div>
                     </div>
                 )}
-                <div class="fill-blank">
+                <div className="fill-blank">
                     <div className="mt-3">
                         <label className="form-label">Answer</label>
                         <textarea
@@ -149,7 +155,7 @@ const Form = ({ type, data, setData, handleChange, handleSubmit }) => {
                 </div>
 
                 <input
-                    class="btn btn-outline-secondary mt-4"
+                    className="btn btn-outline-secondary mt-4"
                     type="submit"
                     value="Submit"
                     onClick={handleSubmit}

@@ -32,14 +32,12 @@ const Auth = () => {
     const handleShowPassword = () => setShowPassword((prev) => !prev);
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(formData);
         if (isSignup) {
             dispatch(signup(formData, history));
             // setErrorMessage(false);
         } else {
             const loginPromise = dispatch(login(formData, history));
             loginPromise.then((promise) => {
-                console.log(promise);
                 if (promise?.response?.status === 400) {
                     setPasswordWrongError(true);
                     setUserNotExistError(false);
@@ -61,7 +59,6 @@ const Auth = () => {
     const googleSuccess = async (res) => {
         const result = res?.profileObj;
         const token = res?.tokenId;
-        console.log(result);
         try {
             dispatch({ type: "AUTH", data: { result, token } });
             history.push("/");

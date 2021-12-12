@@ -15,12 +15,11 @@ const Tags = () => {
         );
 
     const uniqTags = [...new Set(contents.map((content) => content.tag))];
-    console.log(contents);
     return (
         <div>
             <div className="mt-12 ml-20 grid sm:grid-cols-1 md:grid-cols-4 ">
                 {uniqTags.map((tag) => (
-                    <div class="col-3 d-flex justify-content-center p-5 text-center ">
+                    <div className="col-3 d-flex justify-content-center p-5 text-center ">
                         <TagCard tag={tag} option={option} />
                     </div>
                 ))}

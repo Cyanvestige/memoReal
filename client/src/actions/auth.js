@@ -8,7 +8,7 @@ export const login = (formData, history) => async (dispatch) => {
         dispatch({ type: AUTH, data });
         history.push("/");
     } catch (err) {
-        // console.log(err);
+        console.log(err);
         return err;
     }
 };

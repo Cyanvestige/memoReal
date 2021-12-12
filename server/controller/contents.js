@@ -13,7 +13,6 @@ export const getContents = async (req, res) => {
 
 export const createContent = async (req, res) => {
     const content = req.body;
-    console.log(req);
     const newContent = new StudyContent({
         ...content,
         creator: req.userId,

@@ -10,11 +10,9 @@ const ContentList = () => {
     // const contents = useSelector((state) => state.contents);
     const { tag } = location.state;
     const contents = useSelector((state) => state.contents);
-    console.log(location.state);
     const [filteredContents, setFilteredContents] = useState([
         contents.filter((content) => content.tag === tag),
     ]);
-    console.log(contents);
     //very important, keeps updating the content list
     useEffect(
         () =>
@@ -26,7 +24,7 @@ const ContentList = () => {
 
     return (
         <div className="mt-12 w-10/12 flex items-center justify-center">
-            <ul class="w-9/12">
+            <ul className="w-100">
                 {filteredContents.map((content) => (
                     <Link
                         to={{
