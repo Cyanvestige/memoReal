@@ -3,17 +3,6 @@ import style from "./style.css";
 
 const Home = () => {
     let now = new Date();
-    // const fetchQuote = new Promise((resolve, reject) =>
-    //     fetch("https://type.fit/api/quotes")
-    //         .then((response) => {
-    //             if (!response.ok) reject("Fetch failed");
-    //             return response.json();
-    //         })
-    //         .then((data) => {
-    //             resolve(data[dateCode % data.length]);
-    //         })
-    // );
-
     const date = new Date();
     const year = "" + date.getFullYear();
     const month = ("0" + (date.getMonth() + 1)).slice(-2);
@@ -22,10 +11,6 @@ const Home = () => {
     const [hour, setHour] = useState(now.getHours() % 12);
     const [minute, setMinute] = useState(now.getMinutes());
     const [second, setSecond] = useState(now.getSeconds());
-    // const [quote, setQuote] = useState("");
-    // useEffect(() => {
-    //     fetchQuote.then((quote) => setQuote(quote));
-    // });
     useEffect(() => {
         const interval = setInterval(() => {
             let now = new Date();

@@ -61,7 +61,7 @@ const Form = ({ type, data, setData, handleChange, handleSubmit }) => {
                     </div>
                 </div>
                 <div>
-                    <label className="form-label">Content</label>
+                    <label className="form-label">Question</label>
                     <textarea
                         className="form-control"
                         id="exampleFormControlTextarea1"

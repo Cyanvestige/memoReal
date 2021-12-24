@@ -24,9 +24,9 @@ const App = () => {
         <Router>
             <Header />
             <div
-                className="mt-32 d-flex flex-column align-items-center "
+                className="mt-40 d-flex flex-column align-items-center "
                 style={{
-                    height: "91vh",
+                    height: "92vh",
                     width: "60%",
                     padding: "8em",
                     margin: "0 auto",

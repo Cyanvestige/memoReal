@@ -15,7 +15,9 @@ app.use(cors());
 
 app.use("/contents", contentRoutes);
 app.use("/user", userRoutes);
-
+app.get("/", (req, res) => {
+    res.send("Hello from the server");
+});
 mongoose
     .connect(process.env.CONNECTION_URL, {
         useNewUrlParser: true,

@@ -27,9 +27,12 @@ const Test = () => {
     const handleSubmit = async () => {
         if (answer === filteredContents[index].answer)
             alert(
-                `You got ${score + 1} problems right (${
-                    (score + 1) / filteredContents.length
-                })`
+                `You got ${score + 1} ${
+                    score === 1 ? "problem" : "problems"
+                } right (${(
+                    (100 * (score + 1)) /
+                    filteredContents.length
+                ).toFixed(2)}%)`
             );
         else
             alert(
@@ -37,14 +40,16 @@ const Test = () => {
                     score === 1 ? "problem" : "problems"
                 } right (${((100 * score) / filteredContents.length).toFixed(
                     2
-                )})%`
+                )}%)`
             );
+        setIndex(0);
+        setScore(0);
     };
     return (
-        <div className="w-8/12 flex-col items-center justify-content-center ">
-            <div className=" flex-col items-center justify-content-center ">
+        <div className="w-10/12 flex-col items-center justify-content-center ">
+            <div className="w-100 flex-col items-center justify-content-center ">
                 <div className="title flex align-items-center justify-content-between">
-                    <h3>Test Mode</h3>
+                    <h4>Test Mode</h4>
                     <h5 className="text-muted">
                         {index + 1}/{filteredContents.length}
                     </h5>

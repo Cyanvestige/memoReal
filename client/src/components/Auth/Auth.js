@@ -1,49 +1,63 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import {
-    Avatar,
-    Button,
-    Paper,
-    Grid,
-    Typography,
-    Container,
-} from "@mui/material";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import Input from "./Input";
 import loginLogo from "./login_logo.png";
 import GoogleLogin from "react-google-login";
 import GoogleIcon from "@mui/icons-material/Google";
 import { useHistory } from "react-router-dom";
 import { signup, login } from "../../actions/auth";
 import "./Auth.css";
+// authentication form(sign up & log in)
 const Auth = () => {
+    // the form contains four information(login only needs email and password)
     const [formData, setFormData] = useState({
         name: "",
         email: "",
         password: "",
         confirmPassword: "",
     });
+
+    // history is for getting back to the previous pages
     const history = useHistory();
+
+    // using hook to define four states indicating four possible invalid cases
     const [passwordWrongError, setPasswordWrongError] = useState(false);
     const [userNotExistError, setUserNotExistError] = useState(false);
-    const [showPassword, setShowPassword] = useState(false);
+    const [userAlreadyExistsError, setUserAlreadyExistsError] = useState(false);
+    const [confirmPasswordNotSameError, setConfirmPasswordNotSameError] =
+        useState(false);
 
     const [isSignup, setIsSignUp] = useState(false);
-    const handleShowPassword = () => setShowPassword((prev) => !prev);
     const handleSubmit = (e) => {
         e.preventDefault();
         if (isSignup) {
-            dispatch(signup(formData, history));
+            const signupPromise = dispatch(signup(formData, history));
+            signupPromise.then((promise) => {
+                if (promise?.response?.status === 400) {
+                    setUserNotExistError(false);
+                    setUserAlreadyExistsError(false);
+                    setPasswordWrongError(false);
+                    setConfirmPasswordNotSameError(true);
+                } else if (promise?.response?.status === 404) {
+                    setUserNotExistError(false);
+                    setUserAlreadyExistsError(true);
+                    setPasswordWrongError(false);
+                    setConfirmPasswordNotSameError(false);
+                }
+            });
             // setErrorMessage(false);
         } else {
             const loginPromise = dispatch(login(formData, history));
             loginPromise.then((promise) => {
                 if (promise?.response?.status === 400) {
-                    setPasswordWrongError(true);
                     setUserNotExistError(false);
+                    setUserAlreadyExistsError(false);
+                    setPasswordWrongError(true);
+                    setConfirmPasswordNotSameError(false);
                 } else if (promise?.response?.status === 404) {
                     setUserNotExistError(true);
+                    setUserAlreadyExistsError(false);
                     setPasswordWrongError(false);
+                    setConfirmPasswordNotSameError(false);
                 }
             });
         }
@@ -55,6 +69,10 @@ const Auth = () => {
 
     const switchMode = () => {
         setIsSignUp(!isSignup);
+        setUserNotExistError(false);
+        setUserAlreadyExistsError(false);
+        setPasswordWrongError(false);
+        setConfirmPasswordNotSameError(false);
     };
     const googleSuccess = async (res) => {
         const result = res?.profileObj;
@@ -97,8 +115,9 @@ const Auth = () => {
                     <p className="login-error">Password is wrong!</p>
                 )}
                 {userNotExistError && (
-                    <p className="login-error">User Doesn't Exsit!</p>
+                    <p className="login-error">User Doesn't Exist!</p>
                 )}
+
                 {isSignup && (
                     <input
                         placeholder="Confirm the password"
@@ -107,7 +126,14 @@ const Auth = () => {
                         onChange={handleChange}
                     />
                 )}
-
+                {userAlreadyExistsError && (
+                    <p className="login-error">User Already Exists</p>
+                )}
+                {confirmPasswordNotSameError && (
+                    <p className="login-error">
+                        Confirmation Password does not match!
+                    </p>
+                )}
                 <button className="button" type="submit">
                     {isSignup ? "Sign Up" : "Log In"}
                 </button>

@@ -30,10 +30,8 @@ const TagCard = ({ tag, option }) => {
                     className="h-40 w-36 flex flex-col justify-center items-center hover:shadow-xl"
                     variant="outlined"
                 >
-                    <Typography className="text-xl font-extrabold m-0">
-                        {tag}
-                    </Typography>
-                    <Typography className="text-xl m-0">
+                    <h2 className="text-xl font-extrabold m-0">{tag}</h2>
+                    <Typography variant="h6" className="text-sm m-0">
                         {numberOfPosts}
                         {`${numberOfPosts == 1 ? ` post` : ` posts`}`}
                     </Typography>
