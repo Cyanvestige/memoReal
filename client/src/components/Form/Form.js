@@ -1,7 +1,7 @@
 const Form = ({ type, data, setData, handleChange, handleSubmit }) => {
     return (
         <div>
-            <div style={{ width: "35vw", paddingBottom: "10%" }}>
+            <div style={{ width: "35vw" }}>
                 <div className="mb-4">
                     <label className="form-label">Title</label>
                     <input

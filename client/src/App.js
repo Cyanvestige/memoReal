@@ -26,7 +26,7 @@ const App = () => {
             <div
                 className="mt-40 d-flex flex-column align-items-center "
                 style={{
-                    height: "92vh",
+                    height: "100%",
                     width: "60%",
                     padding: "8em",
                     margin: "0 auto",

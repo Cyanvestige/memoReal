@@ -200,7 +200,7 @@ const Content = () => {
 
             {(user?.result?.googleId === filteredContent?.creator ||
                 user?.result?._id === filteredContent?.creator) && (
-                <div className="d-flex justify-content-evenly mt-20 pb-20">
+                <div className="d-flex justify-content-evenly mt-20">
                     <Link
                         to={{
                             pathname: `/contents/${filteredContent?._id}`,
