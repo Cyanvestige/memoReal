@@ -56,9 +56,9 @@ const Content = () => {
         }
     };
     return (
-        <div className="w-10/12 flex-col items-center justify-content-center ">
+        <div className="w-10/12 flex-col items-center justify-center ">
             <div className="w-100 text-3xl shadow-sm border-2 rounded-lg text-center h-32 flex-col items-center justify-center">
-                <div className="mt-4">{filteredContent?.title}</div>
+                <div className="mt-4 text-2xl">{filteredContent?.title}</div>
                 <div className="flex justify-center items-center">
                     <p variant="h5" className="mt-2 text-gray-500 text-xl ">
                         {`${

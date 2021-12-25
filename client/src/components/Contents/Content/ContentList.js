@@ -35,7 +35,7 @@ const ContentList = () => {
                     >
                         <div className="post">
                             <div className="flex flex-col justify-center items-center mt-2 p-3 text-black">
-                                <h3>{content.title}</h3>
+                                <h3 className="text-2xl">{content.title}</h3>
                                 <div className="flex justify-evenly w-full">
                                     <h5
                                         variant="h5"

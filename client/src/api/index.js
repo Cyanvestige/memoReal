@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // use axios to connect client side withs server side
-const API = axios.create({ baseURL: "http://localhost:5000/" });
+const API = axios.create({ baseURL: "http://localhost:5000" });
 
 // use interceptors to keep the login state for the user by trying to get the "profile" from the local storage
 API.interceptors.request.use((req) => {
