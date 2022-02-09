@@ -1,117 +1,86 @@
-/* body {
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: Verdana, Helvetica, Arial, sans-serif;
-    color: black;
-    font-weight: 100;
-} */
-
-.bg-video-container {
-    height: 100vh;
-    width: 100vw;
-    position: absolute;
-    overflow: hidden;
-    left: 0;
-    top: 0;
-    z-index: -2;
-}
-
-.bg-video {
-    height: 100vh;
-    width: 100vw;
-    object-position: center;
-    object-fit: cover;
-}
-
 .clock_face {
-    width: 30em;
-    height: 30em;
-    border: 2px solid rgb(0, 0, 0);
-    border-radius: 50%;
-    border-color: rgb(0, 0, 0);
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
+  width: 30em;
+  height: 30em;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 50%;
+  border-color: rgb(0, 0, 0);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
 }
 .clock_face::before {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    left: calc(50% - 10px);
-    top: calc(50% - 10px);
-    color: black;
-    border-radius: 50%;
-    background-color: black;
+  content: "";
+  display: block;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: calc(50% - 10px);
+  top: calc(50% - 10px);
+  color: black;
+  border-radius: 50%;
+  background-color: black;
 }
 
 .clock_face::after {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 98%;
-    height: 98%;
-    left: 1%;
-    top: 1%;
-    border-radius: 50%;
-    border: 1px solid rgb(0, 0, 0);
+  content: "";
+  display: block;
+  position: absolute;
+  width: 98%;
+  height: 98%;
+  left: 1%;
+  top: 1%;
+  border-radius: 50%;
+  border: 1px solid rgb(0, 0, 0);
 }
 
 .clock_heading {
-    font-weight: 100;
-    font-size: 20px;
-    text-transform: uppercase;
-    margin-bottom: 20vmin;
+  font-weight: 100;
+  font-size: 20px;
+  text-transform: uppercase;
+  margin-bottom: 20vmin;
 }
 
 .clock_hand {
-    background: black;
-    position: absolute;
-    bottom: calc(50% - 40px);
+  background: black;
+  position: absolute;
+  bottom: calc(50% - 40px);
 }
 
 .clock_hours {
-    height: 30%;
-    width: 4px;
-    left: calc(50% - 2px);
-    transform-origin: 2px calc(100% - 40px);
+  height: 30%;
+  width: 4px;
+  left: calc(50% - 2px);
+  transform-origin: 2px calc(100% - 40px);
 }
 
 .clock_minutes {
-    height: 40%;
-    width: 4px;
-    left: calc(50% - 2px);
-    transform: rotate(70deg);
-    transform-origin: 2px calc(100% - 40px);
+  height: 40%;
+  width: 4px;
+  left: calc(50% - 2px);
+  transform: rotate(70deg);
+  transform-origin: 2px calc(100% - 40px);
 }
 
 .clock_seconds {
-    height: 50%;
-    width: 2px;
-    left: calc(50% - 1px);
-    transform: rotate(45deg);
-    transform-origin: 1px calc(100% - 40px);
+  height: 50%;
+  width: 2px;
+  left: calc(50% - 1px);
+  transform: rotate(45deg);
+  transform-origin: 1px calc(100% - 40px);
 }
 .countdown {
-    text-align: center;
+  text-align: center;
 }
 
 .countdown_heading {
-    font-weight: 100;
-    font-size: 18px;
+  font-weight: 100;
+  font-size: 18px;
 }
 
 .countdown_body {
-    display: flex;
-    font-size: 26px;
+  display: flex;
+  font-size: 26px;
 }
